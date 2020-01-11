@@ -18,7 +18,7 @@ robot Tests/
 
 ### Highlights
 This framework supports chrome and firefox browsers on Windows and MacOS platforms
-* All supporting can be located in `Keywords` directory
+* All supporting customised robot keywords can be located in `Keywords` directory
 * All the locators and paths can be found in `Locators` directory
 * All the Test cases are present in `Tests` directory
 * Web driver executables are present in `WebDrivers` directory

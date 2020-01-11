@@ -14,6 +14,7 @@ This project demonstrates how you can use robot framework to automate web ui.
 ```
 navigate to robot_framework folder
 robot Tests/
+```
 
 ### Highlights
 This framework supports chrome and firefox browsers on Windows and MacOS platforms

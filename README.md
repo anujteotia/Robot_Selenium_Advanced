@@ -12,7 +12,7 @@ This project demonstrates how you can use robot framework to automate web ui.
 
 ### How To Run
 ```
-navigate to robot_framework folder
+navigate to robot_framework directory
 robot Tests/
 ```
 

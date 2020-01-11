@@ -3,7 +3,7 @@ This project demonstrates how you can use robot framework to automate web ui.
 
 ### Prerequisites
 * Python must be installed (2.7.17 or 3.8.1)
-* Given libraries are installed
+* Libraries given below are installed
   * robotframework==3.1.2
   * robotframework-seleniumlibrary==4.1.0
   * selenium==3.141.0
@@ -17,7 +17,9 @@ robot Tests/
 ```
 
 ### Highlights
-This framework supports chrome and firefox browsers on Windows and MacOS platforms
+This framework supports chrome and firefox browsers on Windows and MacOS platforms.
+
+Browser can be changed to `Chrome` or `firefox` by changing the value of `browser` in `Locators/properties.robot` file.
 * All supporting customised robot keywords can be located in `Keywords` directory
 * All the locators and paths can be found in `Locators` directory
 * All the Test cases are present in `Tests` directory

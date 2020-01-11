@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200111 13:42:11.471" generator="Robot 3.1.2 (Python 2.7.16 on darwin)">
+<suite source="/Users/anujteotia/Downloads/Robot_Selenium/robot_framework/Tests" id="s1" name="Tests">
+<suite source="/Users/anujteotia/Downloads/Robot_Selenium/robot_framework/Tests/home_page_test.robot" id="s1-s1" name="Home Page Test">
+<test id="s1-s1-t1" name="Validate Irdeto Home Page">
+<kw name="Given I Open '${irdeto_url}' in '${browser}' Browser" library="common_keywords">
+<doc>This keyword opens given url in the browser of the choice.</doc>
+<kw name="Set Executable Path For Different Platforms" library="common_keywords">
+<doc>This keyword sets the driver executable according to the platform i.e. Windows/MacOS</doc>
+<arguments>
+<arg>${browser}</arg>
+</arguments>
+<assign>
+<var>${webdriver_exe}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>platform.system()</arg>
+<arg>platform</arg>
+</arguments>
+<assign>
+<var>${system}</var>
+</assign>
+<msg timestamp="20200111 13:42:11.834" level="INFO">${system} = Darwin</msg>
+<status status="PASS" endtime="20200111 13:42:11.835" starttime="20200111 13:42:11.826"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${system}'.lower() == 'windows'</arg>
+<arg>Set Web Driver Executable Path For Windows</arg>
+<arg>${browser}</arg>
+<arg>ELSE IF</arg>
+<arg>'${system}'.lower() == 'darwin'</arg>
+<arg>Set Web Driver Executable Path For MacOS</arg>
+<arg>${browser}</arg>
+</arguments>
+<assign>
+<var>${webdriver_exe}</var>
+</assign>
+<kw name="Set Web Driver Executable Path For MacOS" library="common_keywords">
+<doc>This keyword sets the path for driver executable</doc>
+<arguments>
+<arg>${browser}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'.lower() == 'chrome'</arg>
+<arg>Set Variable</arg>
+<arg>${mac_chrome_driver_exe}</arg>
+<arg>ELSE IF</arg>
+<arg>'${browser}'.lower() == 'firefox'</arg>
+<arg>Set Variable</arg>
+<arg>${mac_firefox_driver_exe}</arg>
+</arguments>
+<assign>
+<var>${webdriver_exe}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${mac_chrome_driver_exe}</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:11.836" starttime="20200111 13:42:11.836"></status>
+</kw>
+<msg timestamp="20200111 13:42:11.837" level="INFO">${webdriver_exe} = /Users/anujteotia/Downloads/Robot_Selenium/robot_framework/WebDrivers/chromedriver</msg>
+<status status="PASS" endtime="20200111 13:42:11.837" starttime="20200111 13:42:11.836"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${webdriver_exe}</arg>
+<arg>msg=Unable to set the path for webdriver executable.</arg>
+</arguments>
+<msg timestamp="20200111 13:42:11.837" level="INFO">Length is 82</msg>
+<status status="PASS" endtime="20200111 13:42:11.837" starttime="20200111 13:42:11.837"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:11.837" starttime="20200111 13:42:11.835"></status>
+</kw>
+<msg timestamp="20200111 13:42:11.837" level="INFO">${webdriver_exe} = /Users/anujteotia/Downloads/Robot_Selenium/robot_framework/WebDrivers/chromedriver</msg>
+<status status="PASS" endtime="20200111 13:42:11.837" starttime="20200111 13:42:11.835"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${webdriver_exe}</arg>
+<arg>msg=Unable to set the path for webdriver executable.</arg>
+</arguments>
+<msg timestamp="20200111 13:42:11.838" level="INFO">Length is 82</msg>
+<status status="PASS" endtime="20200111 13:42:11.838" starttime="20200111 13:42:11.837"></status>
+</kw>
+<msg timestamp="20200111 13:42:11.838" level="INFO">${webdriver_exe} = /Users/anujteotia/Downloads/Robot_Selenium/robot_framework/WebDrivers/chromedriver</msg>
+<status status="PASS" endtime="20200111 13:42:11.838" starttime="20200111 13:42:11.826"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>${browser}</arg>
+<arg>executable_path=${webdriver_exe}</arg>
+</arguments>
+<msg timestamp="20200111 13:42:11.838" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" endtime="20200111 13:42:14.098" starttime="20200111 13:42:11.838"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200111 13:42:14.299" starttime="20200111 13:42:14.099"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20200111 13:42:14.300" level="INFO">Opening url 'https://irdeto.com/'</msg>
+<status status="PASS" endtime="20200111 13:42:21.682" starttime="20200111 13:42:14.300"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:21.686" starttime="20200111 13:42:21.683"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${set_selenium_speed}</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:21.688" starttime="20200111 13:42:21.686"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:21.688" starttime="20200111 13:42:11.825"></status>
+</kw>
+<kw name="When Add Cookie" library="SeleniumLibrary">
+<doc>Adds a cookie to your current session.</doc>
+<arguments>
+<arg>${cookie_name}</arg>
+<arg>${cookie_val}</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:22.299" starttime="20200111 13:42:21.689"></status>
+</kw>
+<kw name="And Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20200111 13:42:27.940" starttime="20200111 13:42:22.300"></status>
+</kw>
+<kw name="Then Validate About Us In The Home Page" library="home_page_keywords">
+<doc>This keyword valdates the links in the home page</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${about_us}</arg>
+<arg>timeout=${timeout}</arg>
+<arg>error=About Us is not present in the irdeto home page</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:28.466" starttime="20200111 13:42:27.942"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>About Us is present in the Irdeto Home Page</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:28.468" starttime="20200111 13:42:28.467"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:28.468" starttime="20200111 13:42:27.941"></status>
+</kw>
+<kw name="And Validate Careers In The Home Page" library="home_page_keywords">
+<doc>This keyword valdates the links in the home page</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${careers}</arg>
+<arg>timeout=${timeout}</arg>
+<arg>error=Careers Option is not present in the irdeto home page</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:28.986" starttime="20200111 13:42:28.469"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Careers is present in the Irdeto Home Page</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:28.988" starttime="20200111 13:42:28.987"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:28.988" starttime="20200111 13:42:28.469"></status>
+</kw>
+<doc>This test case validates About Us and Careers in Irdeto Home Page</doc>
+<tags>
+<tag>HOME_PAGE</tag>
+</tags>
+<status status="PASS" endtime="20200111 13:42:28.989" critical="yes" starttime="20200111 13:42:11.824"></status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20200111 13:42:29.710" starttime="20200111 13:42:28.992"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:29.710" starttime="20200111 13:42:11.505"></status>
+</suite>
+<suite source="/Users/anujteotia/Downloads/Robot_Selenium/robot_framework/Tests/search_irdeto.robot" id="s1-s2" name="Search Irdeto">
+<test id="s1-s2-t1" name="Open Google and Search Irdeto">
+<kw name="Given I Open '${google_url}' in '${browser}' Browser" library="common_keywords">
+<doc>This keyword opens given url in the browser of the choice.</doc>
+<kw name="Set Executable Path For Different Platforms" library="common_keywords">
+<doc>This keyword sets the driver executable according to the platform i.e. Windows/MacOS</doc>
+<arguments>
+<arg>${browser}</arg>
+</arguments>
+<assign>
+<var>${webdriver_exe}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>platform.system()</arg>
+<arg>platform</arg>
+</arguments>
+<assign>
+<var>${system}</var>
+</assign>
+<msg timestamp="20200111 13:42:29.723" level="INFO">${system} = Darwin</msg>
+<status status="PASS" endtime="20200111 13:42:29.724" starttime="20200111 13:42:29.723"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${system}'.lower() == 'windows'</arg>
+<arg>Set Web Driver Executable Path For Windows</arg>
+<arg>${browser}</arg>
+<arg>ELSE IF</arg>
+<arg>'${system}'.lower() == 'darwin'</arg>
+<arg>Set Web Driver Executable Path For MacOS</arg>
+<arg>${browser}</arg>
+</arguments>
+<assign>
+<var>${webdriver_exe}</var>
+</assign>
+<kw name="Set Web Driver Executable Path For MacOS" library="common_keywords">
+<doc>This keyword sets the path for driver executable</doc>
+<arguments>
+<arg>${browser}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser}'.lower() == 'chrome'</arg>
+<arg>Set Variable</arg>
+<arg>${mac_chrome_driver_exe}</arg>
+<arg>ELSE IF</arg>
+<arg>'${browser}'.lower() == 'firefox'</arg>
+<arg>Set Variable</arg>
+<arg>${mac_firefox_driver_exe}</arg>
+</arguments>
+<assign>
+<var>${webdriver_exe}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${mac_chrome_driver_exe}</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:29.727" starttime="20200111 13:42:29.727"></status>
+</kw>
+<msg timestamp="20200111 13:42:29.727" level="INFO">${webdriver_exe} = /Users/anujteotia/Downloads/Robot_Selenium/robot_framework/WebDrivers/chromedriver</msg>
+<status status="PASS" endtime="20200111 13:42:29.727" starttime="20200111 13:42:29.726"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${webdriver_exe}</arg>
+<arg>msg=Unable to set the path for webdriver executable.</arg>
+</arguments>
+<msg timestamp="20200111 13:42:29.728" level="INFO">Length is 82</msg>
+<status status="PASS" endtime="20200111 13:42:29.728" starttime="20200111 13:42:29.728"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:29.728" starttime="20200111 13:42:29.725"></status>
+</kw>
+<msg timestamp="20200111 13:42:29.728" level="INFO">${webdriver_exe} = /Users/anujteotia/Downloads/Robot_Selenium/robot_framework/WebDrivers/chromedriver</msg>
+<status status="PASS" endtime="20200111 13:42:29.728" starttime="20200111 13:42:29.724"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${webdriver_exe}</arg>
+<arg>msg=Unable to set the path for webdriver executable.</arg>
+</arguments>
+<msg timestamp="20200111 13:42:29.729" level="INFO">Length is 82</msg>
+<status status="PASS" endtime="20200111 13:42:29.729" starttime="20200111 13:42:29.729"></status>
+</kw>
+<msg timestamp="20200111 13:42:29.729" level="INFO">${webdriver_exe} = /Users/anujteotia/Downloads/Robot_Selenium/robot_framework/WebDrivers/chromedriver</msg>
+<status status="PASS" endtime="20200111 13:42:29.729" starttime="20200111 13:42:29.722"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>${browser}</arg>
+<arg>executable_path=${webdriver_exe}</arg>
+</arguments>
+<msg timestamp="20200111 13:42:29.730" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" endtime="20200111 13:42:32.197" starttime="20200111 13:42:29.730"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200111 13:42:32.336" starttime="20200111 13:42:32.198"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20200111 13:42:32.337" level="INFO">Opening url 'https://www.google.com/'</msg>
+<status status="PASS" endtime="20200111 13:42:33.542" starttime="20200111 13:42:32.336"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:33.544" starttime="20200111 13:42:33.542"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${set_selenium_speed}</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:33.545" starttime="20200111 13:42:33.545"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:33.546" starttime="20200111 13:42:29.722"></status>
+</kw>
+<kw name="Then Validate Google Is Open" library="search_keywords">
+<doc>This keyword checks for google page</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Google</arg>
+</arguments>
+<msg timestamp="20200111 13:42:34.057" level="INFO">Page title is 'Google'.</msg>
+<status status="PASS" endtime="20200111 13:42:34.058" starttime="20200111 13:42:33.547"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:34.058" starttime="20200111 13:42:33.546"></status>
+</kw>
+<kw name="When User Enters Irdeto Text In Google" library="search_keywords">
+<doc>This keyword enter the Irdeto text in the search box</doc>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>${search_text_box}</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:35.131" starttime="20200111 13:42:34.060"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_text_box}</arg>
+<arg>${search_term}</arg>
+</arguments>
+<msg timestamp="20200111 13:42:35.132" level="INFO">Typing text 'irdeto' into text field 'name:q'.</msg>
+<status status="PASS" endtime="20200111 13:42:36.794" starttime="20200111 13:42:35.131"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Irdeto text has been entered successfully.</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:36.795" starttime="20200111 13:42:36.795"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:36.796" starttime="20200111 13:42:34.059"></status>
+</kw>
+<kw name="And Search For Irdeto" library="search_keywords">
+<doc>Click on google search button</doc>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${search_text_box}</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20200111 13:42:36.800" level="INFO">Sending key(s) (u'ENTER',) to name:q element.</msg>
+<msg timestamp="20200111 13:42:37.321" level="INFO">Pressing special key ENTER to element.</msg>
+<status status="PASS" endtime="20200111 13:42:39.984" starttime="20200111 13:42:36.797"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Clicked the search button successfully.</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:39.985" starttime="20200111 13:42:39.984"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:39.986" starttime="20200111 13:42:36.796"></status>
+</kw>
+<kw name="Then Validate First Search Result Is Irdeto" library="search_keywords">
+<doc>This keyword validates that the first search result is for Irdeto</doc>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${first_search_result}</arg>
+<arg>${search_result}</arg>
+<arg>First search result is not for irdeto</arg>
+</arguments>
+<msg timestamp="20200111 13:42:41.045" level="INFO">Element 'xpath:(//div[@class='TbwUpd']//cite)[1]' contains text 'irdeto.com'.</msg>
+<status status="PASS" endtime="20200111 13:42:41.046" starttime="20200111 13:42:39.988"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>First result is for Irdeto</arg>
+</arguments>
+<status status="PASS" endtime="20200111 13:42:41.047" starttime="20200111 13:42:41.046"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:41.047" starttime="20200111 13:42:39.987"></status>
+</kw>
+<doc>This test case searches for Irdeto in Google</doc>
+<tags>
+<tag>SEARCH_IRDETO</tag>
+</tags>
+<status status="PASS" endtime="20200111 13:42:41.048" critical="yes" starttime="20200111 13:42:29.721"></status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20200111 13:42:41.675" starttime="20200111 13:42:41.049"></status>
+</kw>
+<status status="PASS" endtime="20200111 13:42:41.675" starttime="20200111 13:42:29.713"></status>
+</suite>
+<status status="PASS" endtime="20200111 13:42:41.696" starttime="20200111 13:42:11.474"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">HOME_PAGE</stat>
+<stat fail="0" pass="1">SEARCH_IRDETO</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Tests" pass="2">Tests</stat>
+<stat fail="0" id="s1-s1" name="Home Page Test" pass="1">Tests.Home Page Test</stat>
+<stat fail="0" id="s1-s2" name="Search Irdeto" pass="1">Tests.Search Irdeto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
